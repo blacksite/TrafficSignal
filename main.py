@@ -17,7 +17,7 @@ if __name__ == '__main__':
         client = mqtt.Client()
         client.connect(BROKER_URL, BROKER_PORT)
         # client.publish("topic/test", "Hello world!")
-        client.publish("traffic", status)
+        client.publish("traffic", status, qos=1)
         client.disconnect()
         time.sleep(wait_interval)
 
